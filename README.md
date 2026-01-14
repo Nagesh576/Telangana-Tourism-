@@ -64,11 +64,16 @@ telangana-tourism/
 │   ├── images/
 │   └── icons/
 ├── README.md
-🚀 Getting Started
+
+---
+
+
 1️⃣ Clone the Repository
+
 git clone https://github.com/your-username/telangana-tourism.git
 
 2️⃣ Open the Project
+
 cd telangana-tourism
 
 3️⃣ Run the Application
