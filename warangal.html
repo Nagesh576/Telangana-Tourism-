@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warangal District - Telangana Tourism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        section h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        section img {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.05);
+        }
+
+        section p {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1rem;
+        }
+
+        hr {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            section img {
+                max-width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏰 Warangal District - Famous Places</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">🏠 Back to All Districts</a>
+            <a href="login.html">🚪 Logout</a>
+        </nav>
+
+        <main>
+            <section>
+                <h2>Warangal Fort</h2>
+                <div class="content-wrapper">
+                    <img src="images/Warangal Fort.jpeg" alt="Warangal Fort">
+                    <p>
+                        Warangal Fort is a historic and architectural marvel located in Warangal, Telangana. Built during the reign of the Kakatiya dynasty in the 13th century, the fort once served as the capital stronghold of the Kakatiya rulers, particularly under King Ganapati Deva and his daughter Rani Rudrama Devi. The fort is renowned for its massive stone gateways known as the <strong>Kakatiya Kala Thoranam</strong>, intricately carved with floral, animal, and geometric patterns, which are now symbolic of Telangana's cultural identity. Originally, the fort had three concentric circular walls — the outermost earthen wall, a massive stone wall, and an inner fortification — offering exceptional defense. Though much of the structure is now in ruins, the remnants reflect the artistic excellence of the Kakatiya period. The fort complex also includes ancient temples, pillars, and sculptures that attract tourists, historians, and archaeology enthusiasts. Warangal Fort stands as a proud reminder of Telangana's glorious past.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Thousand Pillar Temple (Rudreshwara Swamy Temple)</h2>
+                <div class="content-wrapper">
+                    <img src="images/Thousand Pillar Temple.jpeg" alt="Thousand Pillar Temple">
+                    <p>
+                        The Thousand Pillar Temple, also known as Rudreshwara Swamy Temple, is a magnificent architectural wonder located in Hanamkonda, Telangana. Built in the 12th century by the Kakatiya king Rudra Deva, the temple is dedicated to Lord Shiva, Vishnu, and Surya. This iconic structure is renowned for its richly carved pillars, intricate sculptures, and the monolithic black basalt Nandi (bull) that faces the main shrine. Despite the name, the temple does not literally have a thousand pillars, but its numerous beautifully polished pillars create a maze-like, symmetrical design that leaves visitors in awe. The temple's star-shaped platform, detailed carvings of deities, dancers, and animals, and its exquisite craftsmanship reflect the grandeur of Kakatiya architecture. Though partially damaged over time by invasions, the Thousand Pillar Temple remains a major heritage site and spiritual center. It draws devotees, tourists, and history lovers who come to admire its artistry and serene atmosphere.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Ramappa Temple (Rudreshwara Temple)</h2>
+                <div class="content-wrapper">
+                    <img src="images/Ramappa Temple.jpeg" alt="Ramappa Temple">
+                    <p>
+                        Ramappa Temple, officially known as Rudreshwara Temple, is a remarkable 13th-century temple located in Palampet village, Telangana. Built during the reign of the Kakatiya dynasty by the commander Recharla Rudra, the temple is unique for being named after its chief sculptor, Ramappa. It was constructed between 1213 and 1234 CE and is celebrated for its architectural brilliance and artistic excellence. The temple stands on a star-shaped platform about six feet high and is adorned with intricate carvings of mythical creatures, dancers, and animals that showcase the Kakatiya artisans' exceptional skill. The temple's roof is made of lightweight, porous bricks, known as "floating bricks," and its foundation is built in a sandbox technique to withstand earthquakes. Dedicated to Lord Shiva (Ramalingeswara Swamy), the temple also features a majestic Nandi statue. Surrounded by scenic Ramappa Lake, this UNESCO World Heritage Site is a symbol of Telangana's glorious heritage and architectural splendor.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Bhadrakali Temple</h2>
+                <div class="content-wrapper">
+                    <img src="images/Bhadrakali Temple.jpeg" alt="Bhadrakali Temple">
+                    <p>
+                        Bhadrakali Temple, located in Warangal, Telangana, is one of the oldest and most revered temples dedicated to Goddess Bhadrakali, an incarnation of Goddess Durga. The temple is believed to have been built in the 12th century during the Kakatiya dynasty. It is situated on a hilltop overlooking the picturesque Bhadrakali Lake, adding to its serene ambiance. The temple's architecture features intricate carvings and sculptures that depict various deities and mythological scenes. The main idol of Goddess Bhadrakali is adorned with exquisite jewelry and is a focal point for devotees who come to seek her blessings. The temple hosts several festivals throughout the year, with the most significant being the <strong>Kalyanotsavam</strong>, which attracts thousands of devotees. Bhadrakali Temple is not only a spiritual center but also a symbol of Telangana's rich cultural heritage.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Telangana Tourism | Explore the Heritage of Warangal</p>
+        </footer>
+    </div>
+    <script>
+fetch("http://localhost:5000/api/districts")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.log(error));
+</script>
+
+</body>
+</html>

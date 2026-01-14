@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddipet District - Telangana Tourism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        section h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        section img {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.05);
+        }
+
+        section p {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1rem;
+        }
+
+        hr {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            section img {
+                max-width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌉 Siddipet District - Famous Places</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">🏠 Back to All Districts</a>
+            <a href="login.html">🚪 Logout</a>
+        </nav>
+
+        <main>
+            <section>
+                <h2>Komati Cheruvu & Suspension Bridge</h2>
+                <div class="content-wrapper">
+                    <img src="images/Komati Cheruvu & Suspension Bridge.jpeg" alt="Komati Cheruvu & Suspension Bridge">
+                    <p>
+                        Komati Cheruvu, located in Siddipet, is a scenic man-made lake that has become a major tourist attraction thanks to its beautiful surroundings and modern additions. The highlight of this destination is the 241-meter-long suspension bridge, the second of its kind in Telangana, designed by the famous engineer Girish Bharadwaj. Opened in 2019, the bridge offers visitors a unique walking experience with stunning views of the lake and the surrounding town. The area is especially magical at night when the bridge and lakefront are illuminated. Visitors can enjoy boating, including speedboats and pedal boats, or try the adventurous zip cycling over the water. The nearby Glow Garden features illuminated sculptures and a musical fountain that adds charm to evening visits. Landscaped promenades, seating areas, and food kiosks make Komati Cheruvu a perfect spot for families, couples, and photography enthusiasts. It offers a wonderful mix of leisure, nature, and adventure, ideal for a memorable outing.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Kondapochamma Reservoir</h2>
+                <div class="content-wrapper">
+                    <img src="images/Kondapochamma Reservoir.jpeg" alt="Kondapochamma Reservoir">
+                    <p>
+                        Kondapochamma Reservoir, also called Kondapochamma Sagar, is a modern engineering marvel located in Markook mandal of Siddipet district, about 50 km from Hyderabad. Completed in 2020 as part of the Kaleshwaram Lift Irrigation Scheme, it plays a crucial role in supplying irrigation water and drinking water to Hyderabad and surrounding regions. The reservoir has a capacity of around 15 TMC (thousand million cubic feet) and is filled with water lifted from the Godavari River. The circular bund road, stretching about 15.8 km, offers breathtaking views of the vast water body, especially during sunrise and sunset. The reservoir has become a popular destination for nature lovers, photographers, and families looking for a peaceful retreat. Visitors often enjoy scenic drives and picnics along the reservoir. However, entry onto the bund itself is restricted for safety reasons. With minimal facilities available, it's best to carry food and water while visiting this serene and expansive spot.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Wargal Saraswati Temple</h2>
+                <div class="content-wrapper">
+                    <img src="images/Wargal Saraswati Temple.jpeg" alt="Wargal Saraswati Temple">
+                    <p>
+                        Wargal Saraswati Temple, also called Sri Vidya Saraswati Temple, is a famous temple dedicated to Goddess Saraswati, the deity of knowledge and learning. Located atop a picturesque hillock in Wargal village, near Siddipet, Telangana, it attracts thousands of devotees, especially students and their families. The temple was established in 1989 by Sri Yamavaram Chandrashekhara Sharma and is now managed by the Kanchi Shankar Mutt. The sanctum houses a striking 10-foot idol of Goddess Saraswati, along with shrines for Shani, Lakshmi Ganapathi, and Lord Shiva. The temple complex also includes ancient Vaishnavite temple ruins and a tall Victory Pillar depicting scenes from the Ramayana. It is well-known for hosting <strong>Aksharabhyasam</strong> (learning initiation ceremonies) for young children and also operates a Veda Paathashala. Daily free meals (nitya annadanam) are provided to devotees. Festivals like Vasant Panchami and Navratri are celebrated with grandeur, and the hilltop offers scenic views and a peaceful atmosphere.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Komuravelli Temple</h2>
+                <div class="content-wrapper">
+                    <img src="images/komuravelli temple.jpeg" alt="Komuravelli Temple">
+                    <p>
+                        Komuravelli Temple, also known as Komuravelli Mallanna Temple, is a revered Hindu temple located in Siddipet district, Telangana. Dedicated to Lord Mallanna (also known as Mallikarjuna Swamy), the temple is situated on a hilltop and is surrounded by lush greenery and scenic landscapes. The temple is famous for its annual <strong>Jatara</strong> (fair), which attracts thousands of devotees from across the region. The main deity, Lord Mallanna, is depicted in a unique form, and the temple architecture reflects traditional South Indian styles. Devotees visit the temple to seek blessings for prosperity, health, and well-being. The serene environment and panoramic views from the hilltop make it a popular pilgrimage site and a peaceful retreat for visitors.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Telangana Tourism | Explore the Heritage of Siddipet</p>
+        </footer>
+    </div>
+    <script>
+fetch("http://localhost:5000/api/districts")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.log(error));
+</script>
+
+</body>
+</html>

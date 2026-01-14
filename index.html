@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telangana Districts - Explore Tourism</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo i {
+      font-size: 2rem;
+      color: #ffd700;
+    }
+
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo span em {
+      color: #ffd700;
+      font-style: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .logout-btn {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      padding: 10px 25px;
+      border-radius: 25px;
+      color: #fff !important;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(238, 90, 36, 0.4);
+    }
+
+    .logout-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(238, 90, 36, 0.5);
+    }
+
+    .logout-btn::after {
+      display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 140px 50px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, #ffd700 0%, #ff9500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 30px;
+      line-height: 1.8;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      color: #ffd700;
+      font-weight: 700;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .map-container {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 149, 0, 0.2) 100%);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .map-container img {
+      width: 300px;
+      border-radius: 20px;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .section-title h2 span {
+      color: #ffd700;
+    }
+
+    .section-title p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+    }
+
+    /* Districts Grid */
+    .districts-section {
+      padding: 20px 50px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .districts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .district-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 25px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .district-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .district-card:hover::before {
+      left: 100%;
+    }
+
+    .district-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: #ffd700;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 149, 0, 0.1) 100%);
+    }
+
+    .district-card i {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .district-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .district-card p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Featured Districts */
+    .featured-section {
+      padding: 60px 50px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .featured-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .featured-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .featured-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .featured-card-content {
+      padding: 25px;
+    }
+
+    .featured-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .featured-card p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 span {
+      color: #ffd700;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 25px;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .about-feature i {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #ffd700 0%, #ff9500 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1a1a2e;
+      font-size: 1.2rem;
+    }
+
+    .about-feature span {
+      font-weight: 500;
+    }
+
+    .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Highlights Section */
+    .highlights-section {
+      padding: 60px 50px;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 149, 0, 0.05) 100%);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 40px auto 0;
+    }
+
+    .highlight-card {
+      text-align: center;
+      padding: 40px 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .highlight-card i {
+      font-size: 3rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .highlight-card p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 60px 50px 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto 40px;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+
+    .footer-section p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-section ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #ffd700;
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: #ffd700;
+      color: #1a1a2e;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-bottom i {
+      color: #ff6b6b;
+    }
+
+    /* Search Box */
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .search-box {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      padding: 8px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .search-box input {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 15px 25px;
+      color: #fff;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+    }
+
+    .search-box input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .search-box button {
+      background: linear-gradient(135deg, #ffd700 0%, #ff9500 100%);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      color: #1a1a2e;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .search-box button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 30px 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .districts-section,
+      .about-section,
+      .highlights-section,
+      footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <i class="fas fa-gopuram"></i>
+      <span>Telangana <em>Tourism</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#districts">Districts</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Discover the Beauty of <span>Telangana</span></h1>
+      <p>Explore ancient temples, rich heritage, vibrant festivals, and breathtaking landscapes across 33 magnificent districts. Your journey through the land of Kakatiya glory begins here!</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>33</h3>
+          <p>Districts</p>
+        </div>
+        <div class="stat-item">
+          <h3>1000+</h3>
+          <p>Temples</p>
+        </div>
+        <div class="stat-item">
+          <h3>50+</h3>
+          <p>Heritage Sites</p>
+        </div>
+        <div class="stat-item">
+          <h3>100+</h3>
+          <p>Tourist Spots</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="map-container">
+        <img src="images/map-telangana-admin-2016.jpg" alt="Telangana Map">
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <div class="search-container">
+    <div class="search-box">
+      <input type="text" placeholder="Search districts, temples, places...">
+      <button><i class="fas fa-search"></i> Search</button>
+    </div>
+  </div>
+
+  <!-- Districts Section -->
+  <section class="districts-section" id="districts">
+    <div class="section-title">
+      <h2>Explore All <span>33 Districts</span></h2>
+      <p>Click on any district to discover its famous places, temples, and attractions</p>
+    </div>
+
+    <div class="districts-grid">
+      <a href="hyderabad.html" class="district-card">
+        <i class="fas fa-city"></i>
+        <h3>Hyderabad</h3>
+        <p>Capital City</p>
+      </a>
+      <a href="warangal.html" class="district-card">
+        <i class="fas fa-monument"></i>
+        <h3>Warangal</h3>
+        <p>Kakatiya Heritage</p>
+      </a>
+      <a href="karimnagar.html" class="district-card">
+        <i class="fas fa-landmark"></i>
+        <h3>Karimnagar</h3>
+        <p>Silver Filigree</p>
+      </a>
+      <a href="nizamabad.html" class="district-card">
+        <i class="fas fa-gopuram"></i>
+        <h3>Nizamabad</h3>
+        <p>Turmeric City</p>
+      </a>
+      <a href="khammam.html" class="district-card">
+        <i class="fas fa-tree"></i>
+        <h3>Khammam</h3>
+        <p>Forest District</p>
+      </a>
+      <a href="adilabad.html" class="district-card">
+        <i class="fas fa-mountain"></i>
+        <h3>Adilabad</h3>
+        <p>Tribal Culture</p>
+      </a>
+      <a href="medak.html" class="district-card">
+        <i class="fas fa-church"></i>
+        <h3>Medak</h3>
+        <p>Historic Church</p>
+      </a>
+      <a href="ranga-reddy.html" class="district-card">
+        <i class="fas fa-industry"></i>
+        <h3>Ranga Reddy</h3>
+        <p>IT Hub</p>
+      </a>
+      <a href="nalgonda.html" class="district-card">
+        <i class="fas fa-fort-awesome"></i>
+        <h3>Nalgonda</h3>
+        <p>Ancient Forts</p>
+      </a>
+      <a href="mahabubnagar.html" class="district-card">
+        <i class="fas fa-water"></i>
+        <h3>Mahbubnagar</h3>
+        <p>Priyadarshini</p>
+      </a>
+      <a href="medchal.html" class="district-card">
+        <i class="fas fa-building"></i>
+        <h3>Medchal</h3>
+        <p>Industrial Zone</p>
+      </a>
+      <a href="jagtial.html" class="district-card">
+        <i class="fas fa-om"></i>
+        <h3>Jagtial</h3>
+        <p>Temple Town</p>
+      </a>
+      <a href="peddapalli.html" class="district-card">
+        <i class="fas fa-gem"></i>
+        <h3>Peddapalli</h3>
+        <p>Coal District</p>
+      </a>
+      <a href="sangareddy.html" class="district-card">
+        <i class="fas fa-archway"></i>
+        <h3>Sangareddy</h3>
+        <p>Heritage Fort</p>
+      </a>
+      <a href="nagarkurnool.html" class="district-card">
+        <i class="fas fa-paw"></i>
+        <h3>Nagarkurnool</h3>
+        <p>Wildlife</p>
+      </a>
+      <a href="wanaparthy.html" class="district-card">
+        <i class="fas fa-crown"></i>
+        <h3>Wanaparthy</h3>
+        <p>Royal Palace</p>
+      </a>
+      <a href="narayanpet.html" class="district-card">
+        <i class="fas fa-tshirt"></i>
+        <h3>Narayanpet</h3>
+        <p>Handloom Sarees</p>
+      </a>
+      <a href="kamareddy.html" class="district-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Kamareddy</h3>
+        <p>Agriculture</p>
+      </a>
+      <a href="jogulamba-gadwal.html" class="district-card">
+        <i class="fas fa-scroll"></i>
+        <h3>Jogulamba Gadwal</h3>
+        <p>Shakti Peetha</p>
+      </a>
+      <a href="yadadri-bhongir.html" class="district-card">
+        <i class="fas fa-pray"></i>
+        <h3>Yadadri Bhongir</h3>
+        <p>Lakshmi Narasimha</p>
+      </a>
+      <a href="siddipet.html" class="district-card">
+        <i class="fas fa-tint"></i>
+        <h3>Siddipet</h3>
+        <p>Irrigation Hub</p>
+      </a>
+      <a href="jayashankar-bhupalpally.html" class="district-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Jayashankar</h3>
+        <p>Bhupalpally</p>
+      </a>
+      <a href="mulugu.html" class="district-card">
+        <i class="fas fa-hiking"></i>
+        <h3>Mulugu</h3>
+        <p>Laknavaram</p>
+      </a>
+      <a href="bhadradri-kothagudem.html" class="district-card">
+        <i class="fas fa-fire"></i>
+        <h3>Bhadradri</h3>
+        <p>Rama Temple</p>
+      </a>
+      <a href="suryapet.html" class="district-card">
+        <i class="fas fa-sun"></i>
+        <h3>Suryapet</h3>
+        <p>Sunrise City</p>
+      </a>
+      <a href="rajanna-sircilla.html" class="district-card">
+        <i class="fas fa-dharmachakra"></i>
+        <h3>Rajanna Sircilla</h3>
+        <p>Vemulawada</p>
+      </a>
+      <a href="komaram-bheem-asifabad.html" class="district-card">
+        <i class="fas fa-fist-raised"></i>
+        <h3>K.B. Asifabad</h3>
+        <p>Tribal Heritage</p>
+      </a>
+      <!-- <a href="mancherial.html" class="district-card">
+        <i class="fas fa-industry"></i>
+        <h3>Mancherial</h3>
+        <p>Singareni Coal</p>
+      </a> -->
+      <!-- <a href="nirmal.html" class="district-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Nirmal</h3>
+        <p>Nirmal Paintings</p>
+      </a> -->
+      <!-- <a href="vikarabad.html" class="district-card">
+        <i class="fas fa-campground"></i>
+        <h3>Vikarabad</h3>
+        <p>Ananthagiri Hills</p>
+      </a> -->
+      <!-- <a href="jangaon.html" class="district-card">
+        <i class="fas fa-kaaba"></i>
+        <h3>Jangaon</h3>
+        <p>Historic Town</p>
+      </a> -->
+      <!-- <a href="mahabubabad.html" class="district-card">
+        <i class="fas fa-spa"></i>
+        <h3>Mahabubabad</h3>
+        <p>Tribal District</p>
+      </a> -->
+      <!-- <a href="warangal.html" class="district-card">
+        <i class="fas fa-university"></i>
+        <h3>Warangal</h3>
+        <p>1000 Pillar Temple</p>
+      </a> -->
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights-section">
+    <div class="section-title">
+      <h2>Why Visit <span>Telangana?</span></h2>
+      <p>Discover what makes Telangana a unique destination</p>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <i class="fas fa-gopuram"></i>
+        <h3>Ancient Temples</h3>
+        <p>Explore UNESCO heritage sites like Ramappa Temple and sacred shrines across the state</p>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-palette"></i>
+        <h3>Rich Culture</h3>
+        <p>Experience vibrant festivals like Bathukamma, Bonalu, and traditional art forms</p>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Delicious Cuisine</h3>
+        <p>Savor authentic Hyderabadi Biryani, Haleem, and traditional Telangana dishes</p>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-fort-awesome"></i>
+        <h3>Historic Forts</h3>
+        <p>Discover magnificent forts from Kakatiya, Qutb Shahi, and Nizam eras</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About <span>Telangana Tourism</span></h2>
+        <p>Telangana, often referred to as the "Land of Temples and Traditions," is a state rich in cultural heritage and spiritual significance. Home to ancient temples like the Thousand Pillar Temple, Ramappa Temple, and Yadadri Temple, it showcases exquisite architectural brilliance and deep-rooted devotion.</p>
+        <p>Festivals like Bathukamma and Bonalu highlight the region's vibrant traditions, uniting communities in grand celebrations. With a legacy shaped by Kakatiya, Chalukya, and Qutb Shahi dynasties, Telangana's heritage is a blend of history, art, and spirituality.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>33 Unique Districts</span>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-om"></i>
+            <span>1000+ Sacred Temples</span>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-hotel"></i>
+            <span>World-class Hotels</span>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-route"></i>
+            <span>Guided Tours</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="images/telanaganatourism.jpeg" alt="Telangana Tourism">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4><i class="fas fa-gopuram"></i> Telangana Tourism</h4>
+        <p>Discover the beauty, heritage, and culture of Telangana. Your gateway to exploring 33 magnificent districts and their treasures.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="#districts"><i class="fas fa-chevron-right"></i> Districts</a></li>
+          <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Tour Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Popular Districts</h4>
+        <ul>
+          <li><a href="hyderabad.html"><i class="fas fa-chevron-right"></i> Hyderabad</a></li>
+          <li><a href="warangal.html"><i class="fas fa-chevron-right"></i> Warangal</a></li>
+          <li><a href="yadadri-bhongir.html"><i class="fas fa-chevron-right"></i> Yadadri</a></li>
+          <li><a href="karimnagar.html"><i class="fas fa-chevron-right"></i> Karimnagar</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</li>
+          <li><i class="fas fa-phone"></i> +91 1234 567 890</li>
+          <li><i class="fas fa-envelope"></i> info@telanganatourism.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Made By <i class="fas fa-heart"></i> Nagesh Rudraram for Telangana | &copy; 2025 Telangana Tourism. All Rights Reserved.</p>
+    </div>
+  </footer>
+<script>
+fetch("http://localhost:5000/api/districts")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.log(error));
+</script>
+
+</body>
+</html>

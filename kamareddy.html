@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamareddy District - Telangana Tourism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        section h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        section img {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.05);
+        }
+
+        section p {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1rem;
+        }
+
+        hr {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            section img {
+                max-width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏰 Kamareddy District - Famous Places</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">🏠 Back to All Districts</a>
+            <a href="login.html">🚪 Logout</a>
+        </nav>
+
+        <main>
+            <section>
+                <h2>Domakonda Fort</h2>
+                <div class="content-wrapper">
+                    <img src="images/Domakonda Fort.jpeg" alt="Domakonda Fort">
+                    <p>
+                        Domakonda Fort, located near Kamareddy in Telangana, is a splendid 18th-century structure that reflects the architectural grandeur of the Reddy rulers. Built of granite, the fort features two concentric defensive walls with bastions and arched gateways that once protected the region. A major highlight within the fort is the "Addhala Meda" or Glass House—a beautiful two-storied palace with a central courtyard, Mughal-style arches on the ground floor, and European-style pillars above. The fort complex also houses an ancient Shiva temple dating back to the Kakatiya period, which remains a place of worship even today. Domakonda Fort is admired for its blend of Hindu, Islamic, and European design elements. A major restoration effort earned it the UNESCO Asia-Pacific Award for Cultural Heritage Conservation in 2022. The fort's serene surroundings and rich history make it a must-visit heritage site for history and architecture enthusiasts.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Pocharam Reservoir</h2>
+                <div class="content-wrapper">
+                    <img src="images/Pocharam Reservoir.jpeg" alt="Pocharam Reservoir">
+                    <p>
+                        Pocharam Reservoir, located on the Kamareddy–Medak border in Telangana, is a century-old irrigation project built across the Allair River, a tributary of the Manjeera. Constructed between 1916 and 1922, the dam stretches about 1.7 kilometers and originally had a storage capacity of 2.423 TMC, though it now holds around 1.82 TMC. The reservoir irrigates over 10,000 acres of farmland through an extensive network of canals and distributaries. Beyond its utility, Pocharam Reservoir is a scenic destination known for its tranquil waters and lush surroundings. It feeds the nearby Pocharam Wildlife Sanctuary, making it an excellent spot for birdwatching, picnics, and boating. An island in the reservoir adds to its charm. The best time to visit is post-monsoon when the reservoir is full, and the sanctuary is teeming with life. Its serene environment makes it a favored weekend retreat for nature enthusiasts.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Pocharam Wildlife Sanctuary</h2>
+                <div class="content-wrapper">
+                    <img src="images/Pocharam Wildlife Sanctuary.jpeg" alt="Pocharam Wildlife Sanctuary">
+                    <p>
+                        Pocharam Wildlife Sanctuary is a beautiful natural reserve spread over about 130 square kilometers across Nizamabad and Medak districts. Established in 1952, it was once the private hunting grounds of the Nizams of Hyderabad. The sanctuary surrounds the picturesque Pocharam Lake, formed by damming the Allair River in the early 20th century. The region consists of dry deciduous forests, grasslands, and marshes, offering rich biodiversity. Pocharam is famous for its wide variety of birds, including bar-headed geese, painted storks, herons, teals, and spoonbills, making it a paradise for birdwatchers. The sanctuary is also home to animals like nilgai, chital, sambar, wild boar, jackals, and sloth bears. Visitors can explore a 4.5 km nature trail, climb the old watchtower, and enjoy boating on the lake. The best time to visit is between October and May when wildlife sightings are most rewarding.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Telangana Tourism | Explore the Heritage of Kamareddy</p>
+        </footer>
+    </div>
+    <script>
+fetch("http://localhost:5000/api/districts")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.log(error));
+</script>
+
+</body>
+</html>
